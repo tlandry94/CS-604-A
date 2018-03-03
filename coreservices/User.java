@@ -1,20 +1,18 @@
 package coreservices;
 
 public class User {
-    private String firstName, lastName, userName, password;
+    protected String firstName;
+    protected String lastName;
+    protected String userName;
+    protected String password;
 
-    private void setFirstName(String firstNameInput){
+    public User(String firstNameInput, String lastNameInput, String userNameInput, String passwordInput){
+
         firstName = firstNameInput;
-    }
-    private void setLastName(String lastNameInput){
         lastName = lastNameInput;
-    }
-    private void setUserName(String userNameInput){
         userName = userNameInput;
-    }
-    private void setPassword(String passwordInput){
         password = passwordInput;
-    }
+}//end constructor
     private String getFirstName(){
         return firstName;
     }
