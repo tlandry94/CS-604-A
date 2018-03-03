@@ -1,23 +1,42 @@
 package coreservices;
 
-public class RegisterService implements RegistrationFunctions{
-    //Determine what kind of user the new user will be (doctor, medical professional, patient)
-    public static void main(String[] args){
-        bool isPatient;
-        bool isDoctor;
-        bool isMedicalProfessional;
+public class RegisterService{
 
-//"Input" should come from the connector program that operates on a circle farther out than the core
-        RegistrationFunctions.determineUserType(input);
+    public static void main(String[] args){
+        Boolean isPatient;
+        Boolean isDoctor;
+        Boolean isMedicalProfessional;
+        int userType = 1;//0 for patient, 1 for doctor, 2 for medical professional
+        String firstName = "Bob";
+        String lastName = "Smith";
+        String userName = "CreativeUserName";
+        String password = "lolsecurity";
+        String hospitalName = "Fun place";
+        String specialty = "Healing over time";
+
+        if (userType == 0)
+            isPatient = true;
+        if (userType == 1)
+            isDoctor = true;
+        if (userType == 2)
+            isMedicalProfessional = true;
 
         if(isPatient){
-            patientRegistration(firstName, lastName, userName, password);
+            Patient patient = new Patient(firstName, lastName, userName, password);
         }
         if(isDoctor){
-            doctorRegistration(firstName, lastName, userName, password, hospitalName, specialty);
+            Doctor doctor = new Doctor(firstName, lastName, userName, password, hospitalName, specialty);
         }
         if(isMedicalProfessional){
-            medicalProfessionalRegistration(firstName, lastName, userName, password, hospitalName);
+            MedicalProfessional medicalProfessional = new MedicalProfessional(firstName, lastName, userName, password, hospitalName);
         }
+
+        //test
+        assert patient.getFirstName() == "Bob";
+        assert patient.getLastName() == "Smith";
+        assert patient.getUserName() == "CreativeUserName";
+        assert patient.getPassword() == "lolsecurity";
+        assert patient.getHospitalName == "Fun Place";
+        assert patient.getSpecialty == "Healing over time";
     }
 }

@@ -8,4 +8,10 @@ public class Doctor extends User {
         hospitalName = hospitalNameInput;
         speciality = specialityInput;
     }//end constructor
+    private String getHospital(){
+        return hospitalName;
+    }
+    private String getSpecialty(){
+        return speciality;
+    }
 }
