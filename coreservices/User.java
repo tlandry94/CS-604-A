@@ -25,4 +25,20 @@ public class User {
     private String getPassword(){
         return password;
     }
+    
+    
+    private String setFirstName(String fName){
+        firstName=fName;
+    }
+    private String setLastName(String lName){
+        lastName=lName;
+    }
+    private String setUserName(String uName){
+        userName=uName;
+    }
+    private String setPassword(String passwd){
+        password=passwd;
+}
+    
+    
 }
