@@ -14,4 +14,11 @@ public class Doctor extends User {
     private String getSpecialty(){
         return speciality;
     }
+    
+    private String setHospital(String hName){
+        hospitalName=hName;
+    }
+    private String setSpecialty(String spec){
+        speciality=spec;
+    }
 }
