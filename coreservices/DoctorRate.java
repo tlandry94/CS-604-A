@@ -1,17 +1,23 @@
-class DoctorRate extends User, Doctor {
-    private date rateDate;
+public class DoctorRate extends User, Doctor {
+    private Date rateDate;
     private int rate;
     
-    public getRateDate(){
+    public Doctor(String emailUser, String emailDoctor, Date rateDateInput, int rateInput){
+        super(email);
+        rateDate = rateDateInput;
+        rate = rateInput;
+    }
+    
+    public Date getRateDate(){
       return rateDate;
     }
-    public getRate(){
-      return rateDate;
+    public int getRate(){
+      return rate;
     }
-    public setRateDate(){
-      return rateDate;
+    public Date setRateDate(Date rateD){
+      rateDate = rateD;
     }
-    public setRate(){
-      return rateDate;
+    public int setRate(int rateValue){
+      rate = rateValue;
     }
 }
