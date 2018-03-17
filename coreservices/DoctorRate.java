@@ -22,7 +22,7 @@ public class DoctorRate extends User, Doctor {
     }
     
     
-    public int submitRate(int rating){
+    public int submitRate(){
         //submit to db
     }
         
