@@ -3,14 +3,14 @@ package coreservices;
 public class User {
     protected String firstName;
     protected String lastName;
-    protected String userEmail;
+    protected String userName;
     protected String password;
 
-    public User(String firstNameInput, String lastNameInput, String emailInput, String passwordInput){
+    public User(String firstNameInput, String lastNameInput, String userNameInput, String passwordInput){
 
         firstName = firstNameInput;
         lastName = lastNameInput;
-        userEmail = emailInput;
+        userName = userNameInput;
         password = passwordInput;
 }//end constructor
     private String getFirstName(){
@@ -19,8 +19,8 @@ public class User {
     private String getLastName(){
         return lastName;
     }
-    private String getEmail(){
-        return userEmail;
+    private String getUserName(){
+        return userName;
     }
     private String getPassword(){
         return password;

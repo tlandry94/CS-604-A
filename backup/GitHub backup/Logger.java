@@ -1,6 +1,5 @@
-package coreservices;
-
 import java.io.*;
+//package webappservices; webappservices is not yet available!
 
 public class Logger implements Validator{
 	private String fileName;
