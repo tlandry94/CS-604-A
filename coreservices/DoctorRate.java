@@ -20,4 +20,10 @@ public class DoctorRate extends User, Doctor {
     public int setRate(int rateValue){
       rate = rateValue;
     }
+    
+    
+    public int submitRate(int rating){
+        //submit to db
+    }
+        
 }
