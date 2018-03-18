@@ -1,4 +1,4 @@
-package coreservices;
+package registrationservices;
 
 public class User {
     protected String firstName;

@@ -1,4 +1,4 @@
-package coreservices;
+package registrationservices;
 
 public class DoctorRating {
     private int rateDate;

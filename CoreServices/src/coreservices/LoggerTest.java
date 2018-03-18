@@ -1,5 +1,6 @@
 package coreservices;
 
+import coreservices.Logger;
 import static org.junit.Assert.*;
 
 public class LoggerTest implements Validator{
