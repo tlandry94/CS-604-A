@@ -12,12 +12,12 @@ import DoctorColosseum.registrationservices.*;
  * @author Christina Terradista
  */
 public class SubmitLoginRequest{
-    private void submitLoginRequest(String emailInput, String passwordInput){
-        if(loginservices.LoginValidator(emailInput, passwordInput) == true){
-        //congrats you are logged in!
+    private void submitLoginRequest(String emailInput, String passwordInput, User userName){
+        if(loginservices.LoginValidator(emailInput, passwordInput, userName) == true){
+        System.out.print("Congrats you are logged in!");
         }
-        else if(loginservices.LoginValidator(emailInput, passwordInput) == false){
-            //sorry you failed!
+        else if(loginservices.LoginValidator(emailInput, passwordInput, userName) == false){
+            System.out.print("Sorry the log in process failed!");
         }
     }
 }

@@ -75,7 +75,7 @@ public class CoreServices {
                 emailInput = input.next();
                 System.out.print("\nPassword: ");
                 passwordInput = input.next();
-                //log in services
+                loginservices.SubmitLoginRequest(emailInput, passwordInput, "newPatient");
             }
             if(decision == 4){
                 //log in as a doctor

@@ -5,6 +5,7 @@ public class User {
     protected String lastName;
     protected String userEmail;
     protected String password;
+    protected Boolean loggedInCurrently;
 
     public User(String firstNameInput, String lastNameInput, String emailInput, String passwordInput){
 
@@ -24,5 +25,14 @@ public class User {
     }
     private String getPassword(){
         return password;
+    }
+    private void logIn(){
+        loggedInCurrently = true;
+    }
+    private void logOut(){
+        loggedInCurrently = false;
+    }
+    private Boolean isLoggedIn(){
+        return loggedInCurrently;
     }
 }

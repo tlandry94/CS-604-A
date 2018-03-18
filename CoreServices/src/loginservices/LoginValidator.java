@@ -10,8 +10,8 @@ import DoctorColosseum.registrationservices.*;
  * @author Christina Terradista
  */
 public class LoginValidator {
-    private Boolean loginValidator(String emailInput, String passwordInput){
-        if(emailInput == User.getEmail() && passwordInput == User.getPassword()){
+    private Boolean loginValidator(String emailInput, String passwordInput, User userName){
+        if(emailInput == userName.getEmail() && passwordInput == userName.getPassword() && userName.isLoggedIn() == false){
             return true;
         }
         else return false;
