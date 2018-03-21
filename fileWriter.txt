@@ -1,0 +1,16 @@
+import java.io.*;
+
+public class fileWriter{
+	public static void main(String[] args){
+
+		String path = "C:/java/database.txt"; //path to where we want to put file and names file.
+		File f = new File(path); //creates actual file and puts file in location on hard drive.
+
+		try{
+			f.createNewFile(); //creates file
+		}
+		catch (Exception e){
+			System.out.println("!"); //an arbitrary error symbol if this code breaks.
+		}
+	}
+}
