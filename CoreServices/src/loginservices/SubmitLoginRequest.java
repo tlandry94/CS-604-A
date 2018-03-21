@@ -5,18 +5,16 @@
  */
 package loginservices;
 
-import DoctorColosseum.registrationservices.*;
-
 /**
  *
  * @author Christina Terradista
  */
 public class SubmitLoginRequest{
-    private void submitLoginRequest(String emailInput, String passwordInput, User userName){
-        if(loginservices.LoginValidator(emailInput, passwordInput, userName) == true){
+    private void submitLoginRequest(String emailInput, String passwordInput){
+        if(loginservices.LoginValidator(emailInput, passwordInput) == true){
         System.out.print("Congrats you are logged in!");
         }
-        else if(loginservices.LoginValidator(emailInput, passwordInput, userName) == false){
+        else if(loginservices.LoginValidator(emailInput, passwordInput) == false){
             System.out.print("Sorry the log in process failed!");
         }
     }

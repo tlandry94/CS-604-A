@@ -6,7 +6,8 @@
 package coreservices;
 
 import java.util.Scanner;
-import DoctorColosseum.registrationservices.*;
+import registrationservices.*;
+import loginservices.*;
 /**
  *
  * @author Christina Terradista
@@ -75,7 +76,7 @@ public class CoreServices {
                 emailInput = input.next();
                 System.out.print("\nPassword: ");
                 passwordInput = input.next();
-                loginservices.SubmitLoginRequest(emailInput, passwordInput, "newPatient");
+                //SubmitLoginRequest(emailInput, passwordInput);
             }
             if(decision == 4){
                 //log in as a doctor

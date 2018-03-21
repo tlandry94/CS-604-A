@@ -4,13 +4,12 @@
  * and open the template in the editor.
  */
 package loginservices;
-import DoctorColosseum.registrationservices.*;
 /**
  *
  * @author Christina Terradista
  */
 public class LoginValidator {
-    private Boolean loginValidator(String emailInput, String passwordInput, User userName){
+    private Boolean loginValidator(String emailInput, String passwordInput){
         if(emailInput == userName.getEmail() && passwordInput == userName.getPassword() && userName.isLoggedIn() == false){
             return true;
         }
