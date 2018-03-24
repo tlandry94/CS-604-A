@@ -19,14 +19,9 @@ public class CoreServices {
      */
     public static void main(String[] args) {
         int decision = 0;
-        Scanner input = new Scanner(System.in);//
-        String firstNameInput;
-        String lastNameInput;
-//        String emailInput = null;
-//        String passwordInput;
-        String hospitalInput;
-        String specialtyInput;
+        Scanner input = new Scanner(System.in);
         LoginService loginInput = new LoginService();
+        MemoryUserRepository repositoryOfUsers = new MemoryUserRepository();
         
         while(decision != 5){
             System.out.print("Welcome to the Doctor Colosseum! Please determine what you would like to do. "
@@ -38,6 +33,10 @@ public class CoreServices {
             decision = input.nextInt();
 
             if(decision == 1){
+                String firstNameInput = null;
+                String lastNameInput = null;
+                String emailInput = null;
+                String passwordInput = null;
                 //register as patient
                 System.out.print("What is your first name? ");
                 firstNameInput = input.next();
@@ -51,9 +50,16 @@ public class CoreServices {
                     passwordInput);
                 System.out.print("\nYou have successfully registered! You will now "
                         + "return to the main prompt.");
+                repositoryOfUsers.saveUser(newUser);
             }
             if(decision == 2){
-                //register as patient
+                String firstNameInput = null;
+                String lastNameInput = null;
+                String emailInput = null;
+                String passwordInput = null;
+                String hospitalInput = null;
+                String specialtyInput = null;
+                //register as doctor
                 System.out.print("What is your first name? ");
                 firstNameInput = input.next();
                 System.out.print("\nWhat is your last name? ");
@@ -70,13 +76,14 @@ public class CoreServices {
                     passwordInput, hospitalInput, specialtyInput);
                 System.out.print("\nYou have successfully registered! You will now "
                         + "return to the main prompt.");
+                repositoryOfUsers.saveDoctor(newDoctor);
             }
             if(decision == 3){
                 //log in as a patient
                 String emailInput = null;
                 String passwordInput = null;
                 loginInput.EnterLoginCredentials(emailInput, passwordInput);
-                loginInput.LoginValidator(emailInput, passwordInput, emailInput, passwordInput);
+                loginInput.LoginValidator(returningUser, emailInput, passwordInput);//emailInput, passwordInput, emailInput, passwordInput);
             }
             if(decision == 4){
                 //log in as a doctor

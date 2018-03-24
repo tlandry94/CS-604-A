@@ -16,6 +16,8 @@ public class MemoryUserRepository implements UserRepository {
     
     public List<User> usersSaved = new ArrayList<>();
     public List<User> usersDeleted = new ArrayList<>();
+    public List<Doctor> doctorsSaved = new ArrayList<>();
+    public List<Doctor> doctorsDeleted = new ArrayList<>();
 
     @Override
     public Boolean saveUser(User user) {
@@ -30,6 +32,19 @@ public class MemoryUserRepository implements UserRepository {
         usersSaved.remove(user);
         return true;
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    @Override
+    public Boolean saveDoctor(Doctor doctor){
+        doctorsSaved.add(doctor);
+        return true;
+    }
+    
+    @Override
+    public Boolean deleteDoctor(Doctor doctor){
+        doctorsDeleted.add(doctor);
+        doctorsSaved.remove(doctor);
+        return true;
     }
 
     /*@Override

@@ -5,6 +5,8 @@
  */
 package loginservices;
 
+import registrationservices.User;
+
 /**
  *
  * @author Christina Terradista
@@ -12,7 +14,7 @@ package loginservices;
 public interface LoginInterface {
     public abstract Boolean EnterLoginCredentials(String emailInput, String passwordInput); //Returns true if successful
     
-    public abstract Boolean LoginValidator(String emailInput, String passwordInput, String retrievedEmail, String retriedPassword); //Returns true if successful
+    public abstract Boolean LoginValidator(User newUser, String emailInput, String passwordInput); //Returns true if successful
     
     public abstract Boolean UpdateUserStatus(String emailInput); //Returns true if successful
 }
