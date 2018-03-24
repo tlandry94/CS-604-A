@@ -10,11 +10,13 @@ package coreservices.Tests;
  * @author stevenharvey
  */
 public class UserTest extends User{
-    private User classUnderTest;
+    UserTest classUnderTest;
     String firstName = "dummy";
     String lastName = "dummy";
     String userEmail = "dummy";
     String password = "dummy";
+    String hospitalName = "dummy";
+    String speciality = "dummy";
     
     //@Before
     public void setUp() throws Exception{
@@ -23,29 +25,37 @@ public class UserTest extends User{
     
     //@Test
     private String testgetFirstName(){
+        String firstname = this.firstName;
         //assertEquals(firstName, classUnderTest.testgetFirstName());
+        return firstName;
     }
     private String testgetLastName(){
+        String firstname = this.lastName;
         //assertEquals(lastName, classUnderTest.testgetLastName());
+        return lastName;
     }
     private String testgetEmail(){
+        String useremail = this.userEmail;
         //assertEquals(userEmail, classUnderTest.testgetEmail());
+        return userEmail;
     }
     private String testgetPassword(){
+        String passWord = this.password;
         //assertEquals(password, classUnderTest.testgetPassword());
+        return password;
     }
     private void testlogIn(){
-        testTrue = true;
+        boolean testTrue = true;
         //assertEquals(testTrue, classUnderTest.testlogin());
         
-        testFalse = false;
+        boolean testFalse = false;
         //assertEquals(testFalse, classUnderTest.testlogin());
     }
     private void testlogOut(){
-        testTrue = true;
+        boolean testTrue = true;
         //assertEquals(testTrue, classUnderTest.testlogout());
         
-        testFalse = false;
+        boolean testFalse = false;
         //assertEquals(testFalse, classUnderTest.testlogout());
     }
     
@@ -57,10 +67,14 @@ public class UserTest extends User{
         return brokenEqualsBroken;
     }
     
-    private String getHospital(){
-        return hospitalName;
-    }
+    private String testgetHospital(){
+        String brokenHospital = "dummy";
+        //assertEquals(brokenHospital, classUnderTest.testgetHospital());
+        return brokenHospital;
+    } 
     private String getSpecialty(){
-        return speciality;
+        String brokenSpecialty = "dummy";
+        //assertEquals(brokenSpeciality, classUnderTest.testgetSpeciality());
+        return brokenSpecialty;
     }
 }
