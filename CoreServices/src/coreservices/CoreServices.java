@@ -6,7 +6,8 @@
 package coreservices;
 
 import java.util.Scanner;
-import DoctorColosseum.registrationservices.*;
+import registrationservices.*;
+import loginservices.*;
 /**
  *
  * @author Christina Terradista
@@ -18,13 +19,14 @@ public class CoreServices {
      */
     public static void main(String[] args) {
         int decision = 0;
-        Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);//
         String firstNameInput;
         String lastNameInput;
-        String emailInput;
-        String passwordInput;
+//        String emailInput = null;
+//        String passwordInput;
         String hospitalInput;
         String specialtyInput;
+        LoginService loginInput = new LoginService();
         
         while(decision != 5){
             System.out.print("Welcome to the Doctor Colosseum! Please determine what you would like to do. "
@@ -45,7 +47,7 @@ public class CoreServices {
                 emailInput = input.next();
                 System.out.print("\nWhat is your password? ");
                 passwordInput = input.next();
-                Patient newPatient = new Patient(firstNameInput, lastNameInput, emailInput,
+                User newUser = new User(firstNameInput, lastNameInput, emailInput,
                     passwordInput);
                 System.out.print("\nYou have successfully registered! You will now "
                         + "return to the main prompt.");
@@ -71,11 +73,10 @@ public class CoreServices {
             }
             if(decision == 3){
                 //log in as a patient
-                System.out.print("Email: ");
-                emailInput = input.next();
-                System.out.print("\nPassword: ");
-                passwordInput = input.next();
-                loginservices.SubmitLoginRequest(emailInput, passwordInput, "newPatient");
+                String emailInput = null;
+                String passwordInput = null;
+                loginInput.EnterLoginCredentials(emailInput, passwordInput);
+                loginInput.LoginValidator(emailInput, passwordInput, emailInput, passwordInput);
             }
             if(decision == 4){
                 //log in as a doctor

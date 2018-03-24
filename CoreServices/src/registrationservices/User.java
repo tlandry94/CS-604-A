@@ -35,4 +35,7 @@ public class User {
     private Boolean isLoggedIn(){
         return loggedInCurrently;
     }
+    private Boolean isAHuman(){
+        return true;
+    }
 }
