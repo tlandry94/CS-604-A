@@ -20,10 +20,10 @@ public class User {
     private String getLastName(){
         return lastName;
     }
-    private String getEmail(){
+    public String getEmail(){
         return userEmail;
     }
-    private String getPassword(){
+    public String getPassword(){
         return password;
     }
     private void logIn(){

@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package loginservices;
+
+import registrationservices.*;
 import java.util.Scanner;
 /**
  *
@@ -13,18 +15,19 @@ public class LoginService implements LoginInterface {
     
     @Override
     public Boolean EnterLoginCredentials(String emailInput, String passwordInput) {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Email: ");
-        emailInput = input.next();
-        System.out.print("\nPassword: ");
-        passwordInput = input.next();
-        input.close();
+        try (Scanner input = new Scanner(System.in)) {
+            System.out.print("Email: ");
+            emailInput = input.next();
+            System.out.print("\nPassword: ");
+            passwordInput = input.next();
+        }
+        return true;
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Boolean LoginValidator(String emailInput, String passwordInput, String retrievedEmail, String retriedPassword) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Boolean LoginValidator(User newUser, String emailInput, String passwordInput) {
+        return newUser.getEmail().equals(emailInput) && newUser.getPassword().equals(passwordInput); //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
