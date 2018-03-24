@@ -3,6 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
+            <file>file:/C:/Users/wuki/Documents/GitHub/CS-604-A/CoreServices/src/registrationservices/User.java</file>
+            <file>file:/C:/Users/wuki/Documents/GitHub/CS-604-A/CoreServices/src/coreservices/CoreServices.java</file>
+            <file>file:/C:/Users/wuki/Documents/GitHub/CS-604-A/CoreServices/src/coreservices/LoggerTest.java</file>
+=======
             <file>file:/C:/Users/Christina%20Terradista/Documents/GitHub/CS-604-A/CoreServices/src/registrationservices/DoctorRating.java</file>
             <file>file:/C:/Users/Christina%20Terradista/Documents/GitHub/CS-604-A/CoreServices/src/registrationservices/User.java</file>
             <file>file:/C:/Users/Christina%20Terradista/Documents/GitHub/CS-604-A/CoreServices/src/registrationservices/Patient.java</file>
@@ -12,6 +17,7 @@
             <file>file:/C:/Users/Christina%20Terradista/Documents/GitHub/CS-604-A/CoreServices/src/loginservices/SubmitLoginRequest.java</file>
             <file>file:/C:/Users/Christina%20Terradista/Documents/GitHub/CS-604-A/CoreServices/src/coreservices/CoreServices.java</file>
             <file>file:/C:/Users/Christina%20Terradista/Documents/GitHub/CS-604-A/CoreServices/src/coreservices/Logger.java</file>
+>>>>>>> a2672153257a59d175e632c7580d385a3765f230
         </group>
     </open-files>
 </project-private>
