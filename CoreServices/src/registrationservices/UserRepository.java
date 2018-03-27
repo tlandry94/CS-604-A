@@ -17,5 +17,6 @@ public interface UserRepository {
     public abstract Boolean saveDoctor(Doctor doctor);
     
     public abstract Boolean deleteDoctor(Doctor doctor);
-    //public abstract Boolean findUser(User user);
+    
+    public abstract Boolean findUser(User returningUser);
 }

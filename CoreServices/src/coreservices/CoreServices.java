@@ -33,21 +33,14 @@ public class CoreServices {
             decision = input.nextInt();
 
             if(decision == 1){
-                String firstNameInput = null;
-                String lastNameInput = null;
                 String emailInput = null;
                 String passwordInput = null;
                 //register as patient
-                System.out.print("What is your first name? ");
-                firstNameInput = input.next();
-                System.out.print("\nWhat is your last name? ");
-                lastNameInput = input.next();
                 System.out.print("\nWhat is your email address? ");
                 emailInput = input.next();
                 System.out.print("\nWhat is your password? ");
                 passwordInput = input.next();
-                User newUser = new User(firstNameInput, lastNameInput, emailInput,
-                    passwordInput);
+                User newUser = new User(emailInput, passwordInput);
                 System.out.print("\nYou have successfully registered! You will now "
                         + "return to the main prompt.");
                 repositoryOfUsers.saveUser(newUser);
@@ -82,8 +75,15 @@ public class CoreServices {
                 //log in as a patient
                 String emailInput = null;
                 String passwordInput = null;
-                loginInput.EnterLoginCredentials(emailInput, passwordInput);
-                loginInput.LoginValidator(returningUser, emailInput, passwordInput);//emailInput, passwordInput, emailInput, passwordInput);
+                System.out.print("\nWhat is your email address? ");
+                emailInput = input.next();
+                System.out.print("\nWhat is your password? ");
+                passwordInput = input.next();
+                User returningUser = new User(emailInput, passwordInput);
+                if(repositoryOfUsers.findUser(returningUser))
+                    System.out.print("\nYou have successfully logged in!"
+                            + " However, our rating service is under construction. Sorry!");
+                else System.out.print("\nYou failed to log in successfully. Please try again.");
             }
             if(decision == 4){
                 //log in as a doctor

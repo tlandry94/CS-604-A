@@ -47,10 +47,15 @@ public class MemoryUserRepository implements UserRepository {
         return true;
     }
 
-    /*@Override
-    public Boolean findUser(User user) {
+    @Override
+    public Boolean findUser(User returningUser) {
+        Boolean userFound = false;
+        for ( int i = 0; i <= usersSaved.size(); i++){
+            userFound = usersSaved.get(i) == (returningUser);
+        }
+        return userFound;
         //Iterate through array to find the user info
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }*/
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
