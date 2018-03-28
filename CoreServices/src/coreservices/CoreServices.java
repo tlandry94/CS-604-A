@@ -19,7 +19,7 @@ public class CoreServices {
      */
     public static void main(String[] args) {
         int decision = 0;
-        int rateDateinput = 3282018;
+        int rateDateInput = 3282018;
         Scanner input = new Scanner(System.in);
         LoginService loginInput = new LoginService();
         MemoryUserRepository repositoryOfUsers = new MemoryUserRepository();
@@ -117,8 +117,10 @@ public class CoreServices {
                 lastNameInput = input.next();
                 System.out.print("\nWhat rating (out of ten) would you give the doctor?");
                 ratingInput = input.nextInt();
-                if(newDoctor.getFirstName() == firstNameInput && newDoctor.getLastName() == lastNameInput)
-                    rating = new DoctorRating();
+                if(newDoctor.getFirstName() == firstNameInput && newDoctor.getLastName() == lastNameInput){
+                    rating = new DoctorRating(newUser.getEmail(), newDoctor.getEmail(), rateDateInput, ratingInput, newUser, newDoctor);
+                    repositoryOfRatings.saveRating(rating);
+                }
             }
         }
     }
