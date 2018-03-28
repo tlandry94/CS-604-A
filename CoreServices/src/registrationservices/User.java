@@ -4,6 +4,11 @@ public class User {
     protected String userEmail;
     protected String password;
     protected Boolean loggedInCurrently;
+    
+    public User(){
+        userEmail = null;
+        password = null;
+    };
 
     public User(String emailInput, String passwordInput){
 

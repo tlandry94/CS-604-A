@@ -1,16 +1,18 @@
 package registrationservices;
 
+import java.util.Date;
+
 public class DoctorRating {
     private int rateDate;
     private int rating;
     private String userRatingEmail;
     private String doctorRatingEmail;
     
-    public void Doctor(String userEmailInput, String doctorEmailInput, int rateDateInput, int rateInput){
+    public void DoctorRating(String userEmailInput, String doctorEmailInput, int rateDateInput, int rateInput, User newUser, Doctor newDoctor){
         rateDate = rateDateInput;
         rating = rateInput;
-        userRatingEmail = userEmailInput;
-        doctorRatingEmail = doctorEmailInput;
+        userRatingEmail = newUser.getEmail();
+        doctorRatingEmail = newDoctor.getEmail();
     }
     
     public int getRateDate(){

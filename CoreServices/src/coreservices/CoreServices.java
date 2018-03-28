@@ -19,9 +19,13 @@ public class CoreServices {
      */
     public static void main(String[] args) {
         int decision = 0;
+        int rateDateinput = 3282018;
         Scanner input = new Scanner(System.in);
         LoginService loginInput = new LoginService();
         MemoryUserRepository repositoryOfUsers = new MemoryUserRepository();
+        MemoryRatingRepository repositoryOfRatings = new MemoryRatingRepository();
+        User newUser = new User();
+        Doctor newDoctor = new Doctor();
         
         while(decision != 6){
             System.out.print("Welcome to the Doctor Colosseum! Please determine what you would like to do. "
@@ -41,7 +45,7 @@ public class CoreServices {
                 emailInput = input.next();
                 System.out.print("\nWhat is your password? ");
                 passwordInput = input.next();
-                User newUser = new User(emailInput, passwordInput);
+                newUser = new User(emailInput, passwordInput);
                 System.out.print("\nYou have successfully registered! You will now "
                         + "return to the main prompt.");
                 repositoryOfUsers.saveUser(newUser);
@@ -66,7 +70,7 @@ public class CoreServices {
                 hospitalInput = input.next();
                 System.out.print("\nWhat is your practice speciality? ");
                 specialtyInput = input.next();
-                Doctor newDoctor = new Doctor(firstNameInput, lastNameInput, emailInput,
+                newDoctor = new Doctor(firstNameInput, lastNameInput, emailInput,
                     passwordInput, hospitalInput, specialtyInput);
                 System.out.print("\nYou have successfully registered! You will now "
                         + "return to the main prompt.");
@@ -80,17 +84,41 @@ public class CoreServices {
                 emailInput = input.next();
                 System.out.print("\nWhat is your password? ");
                 passwordInput = input.next();
-                User returningUser = new User(emailInput, passwordInput);
-                if(repositoryOfUsers.findUser(returningUser))
+                //User returningUser = new User(emailInput, passwordInput);
+                if(loginInput.UserLoginValidator(newUser, emailInput, passwordInput))
                     System.out.print("\nYou have successfully logged in!"
-                            + " However, our rating service is under construction. Sorry!");
+                            + " However, our rating service is under construction. Sorry!\n");
                 else System.out.print("\nYou failed to log in successfully. Please try again.");
             }
             if(decision == 4){
                 //log in as a doctor
+                //log in as a patient
+                String emailInput = null;
+                String passwordInput = null;
+                System.out.print("\nWhat is your email address? ");
+                emailInput = input.next();
+                System.out.print("\nWhat is your password? ");
+                passwordInput = input.next();
+                //User returningUser = new User(emailInput, passwordInput);
+                if(loginInput.DoctorLoginValidator(newDoctor, emailInput, passwordInput))
+                    System.out.print("\nYou have successfully logged in!"
+                            + " However, our rating service is under construction. Sorry!\n");
+                else System.out.print("\nYou failed to log in successfully. Please try again.");
             }
              if(decision == 5){
                 //doctor rating
+                String firstNameInput = null;
+                String lastNameInput = null;
+                DoctorRating rating = new DoctorRating();
+                int ratingInput;
+                System.out.print("\nWhat is the first name of the doctor?");
+                firstNameInput = input.next();
+                System.out.print("\nWhat is the last name of the doctor?");
+                lastNameInput = input.next();
+                System.out.print("\nWhat rating (out of ten) would you give the doctor?");
+                ratingInput = input.nextInt();
+                if(newDoctor.getFirstName() == firstNameInput && newDoctor.getLastName() == lastNameInput)
+                    rating = new DoctorRating();
             }
         }
     }

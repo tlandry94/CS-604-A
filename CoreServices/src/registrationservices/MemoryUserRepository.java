@@ -51,7 +51,8 @@ public class MemoryUserRepository implements UserRepository {
     public Boolean findUser(User returningUser) {
         Boolean userFound = false;
         for ( int i = 0; i <= usersSaved.size(); i++){
-            userFound = usersSaved.get(i) == (returningUser);
+            if(userFound = usersSaved.get(i) == (returningUser))
+                userFound = true;
         }
         return userFound;
         //Iterate through array to find the user info

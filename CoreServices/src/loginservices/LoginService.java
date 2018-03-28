@@ -26,12 +26,18 @@ public class LoginService implements LoginInterface {
     }
 
     @Override
-    public Boolean LoginValidator(User returningUser, String emailInput, String passwordInput) {
-        return returningUser.getEmail().equals(emailInput) && returningUser.getPassword().equals(passwordInput); //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Boolean UserLoginValidator(User newUser, String emailInput, String passwordInput) {
+        return newUser.getEmail().equals(emailInput) && newUser.getPassword().equals(passwordInput); //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    @Override
+    public Boolean DoctorLoginValidator(Doctor newDoctor, String emailInput, String passwordInput) {
+        return newDoctor.getEmail().equals(emailInput) && newDoctor.getPassword().equals(passwordInput); //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
+    /*@Override
     public Boolean UpdateUserStatus(String emailInput) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    }*/
+
 }

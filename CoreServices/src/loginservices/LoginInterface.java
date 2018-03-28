@@ -5,7 +5,7 @@
  */
 package loginservices;
 
-import registrationservices.User;
+import registrationservices.*;
 
 /**
  *
@@ -14,7 +14,9 @@ import registrationservices.User;
 public interface LoginInterface {
     public abstract Boolean EnterLoginCredentials(String emailInput, String passwordInput); //Returns true if successful
     
-    public abstract Boolean LoginValidator(User newUser, String emailInput, String passwordInput); //Returns true if successful
+    public abstract Boolean UserLoginValidator(User newUser, String emailInput, String passwordInput); //Returns true if successful
     
-    public abstract Boolean UpdateUserStatus(String emailInput); //Returns true if successful
+    public abstract Boolean DoctorLoginValidator(Doctor newDoctor, String emailInput, String passwordInput);
+    
+    //public abstract Boolean UpdateUserStatus(String emailInput); //Returns true if successful
 }

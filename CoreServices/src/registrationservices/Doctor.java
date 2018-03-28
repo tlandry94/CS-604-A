@@ -8,6 +8,16 @@ public class Doctor {
     protected Boolean loggedInCurrently;
     protected String hospitalName;
     protected String specialtyName;
+    
+    public Doctor(){
+        firstName = null;
+        lastName = null;
+        userEmail = null;
+        password = null;
+        loggedInCurrently = null;
+        hospitalName = null;
+        specialtyName = null;
+    }
 
     public Doctor(String firstNameInput, String lastNameInput, String emailInput, String passwordInput, String hospitalInput, String specialityInput){
 
@@ -18,23 +28,23 @@ public class Doctor {
         hospitalName = hospitalInput;
         specialtyName = specialityInput;
 }//end constructor
-    private String getFirstName(){
+    public String getFirstName(){
         return firstName;
     }
-    private String getLastName(){
+    public String getLastName(){
         return lastName;
     }
-    private String getEmail(){
+    public String getEmail(){
         return userEmail;
     }
-    private String getPassword(){
+    public String getPassword(){
         return password;
     }
     
-     private String getHospital(){
+     public String getHospital(){
         return hospitalName;
     }
-    private String getSpecialty(){
+    public String getSpecialty(){
         return specialtyName;
     }
     private void logIn(){
