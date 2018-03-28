@@ -18,5 +18,9 @@ public interface UserRepository {
     
     public abstract Boolean deleteDoctor(Doctor doctor);
     
-    public abstract Boolean findUser(User returningUser);
+    public abstract int findUser(String emailInput, String passwordInpu);
+    
+    public abstract int findDoctor(String emailInput, String passwordInput);
+    
+    public abstract int findDoctorForRating(String firstNameInput, String lastNameInput);
 }

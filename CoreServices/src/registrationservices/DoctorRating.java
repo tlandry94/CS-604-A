@@ -11,11 +11,11 @@ public class DoctorRating {
         
     }
     
-    public DoctorRating(String userEmailInput, String doctorEmailInput, int rateDateInput, int rateInput, User newUser, Doctor newDoctor){
+    public DoctorRating(String userEmailInput, String doctorEmailInput, int rateDateInput, int rateInput){
         rateDate = rateDateInput;
         rating = rateInput;
-        userRatingEmail = newUser.getEmail();
-        doctorRatingEmail = newDoctor.getEmail();
+        userRatingEmail = userEmailInput;
+        doctorRatingEmail = doctorEmailInput;
     }
     
     public int getRateDate(){

@@ -48,15 +48,33 @@ public class MemoryUserRepository implements UserRepository {
     }
 
     @Override
-    public Boolean findUser(User returningUser) {
-        Boolean userFound = false;
-        for ( int i = 0; i <= usersSaved.size(); i++){
-            if(userFound = usersSaved.get(i) == (returningUser))
-                userFound = true;
+    public int findUser(String emailInput, String passwordInput) {
+        for ( int i = 0; i < usersSaved.size(); i++){
+            if (emailInput.equals(usersSaved.get(i).userEmail) && passwordInput.equals(usersSaved.get(i).password))
+                return i;
         }
-        return userFound;
+        return -1;
         //Iterate through array to find the user info
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    @Override
+    public int findDoctor(String emailInput, String passwordInput) {
+        for ( int i = 0; i < doctorsSaved.size(); i++){
+            if (emailInput.equals(doctorsSaved.get(i).userEmail) && passwordInput.equals(doctorsSaved.get(i).password))
+                return i;
+        }
+        return -1;
+        //Iterate through array to find the user info
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    @Override
+    public int findDoctorForRating(String firstNameInput, String lastNameInput){
+        for ( int i = 0; i < doctorsSaved.size(); i++){
+            if (firstNameInput.equals(doctorsSaved.get(i).firstName) && lastNameInput.equals(doctorsSaved.get(i).lastName))
+                return i;
+        }
+        return -1;
     }
     
 }
