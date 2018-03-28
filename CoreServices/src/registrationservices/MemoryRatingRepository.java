@@ -16,7 +16,6 @@ public class MemoryRatingRepository implements RatingRepository{
     public List<DoctorRating> ratingSaved = new ArrayList<>();
     public List<DoctorRating> ratingDeleted = new ArrayList<>();
  
-    
     @Override
     public Boolean saveRating(DoctorRating rating) {
         ratingSaved.add(rating);

@@ -23,13 +23,14 @@ public class CoreServices {
         LoginService loginInput = new LoginService();
         MemoryUserRepository repositoryOfUsers = new MemoryUserRepository();
         
-        while(decision != 5){
+        while(decision != 6){
             System.out.print("Welcome to the Doctor Colosseum! Please determine what you would like to do. "
                     + "\n1: Register as a patient."
                     + "\n2: Register as a doctor."
                     + "\n3: Log in as a patient."
                     + "\n4: Log in as a doctor."
-                    + "\n5: Quit the program.");
+                    + "\n5: Doctor rating."
+                    + "\n6: Quit the program.");
             decision = input.nextInt();
 
             if(decision == 1){
@@ -87,6 +88,9 @@ public class CoreServices {
             }
             if(decision == 4){
                 //log in as a doctor
+            }
+             if(decision == 5){
+                //doctor rating
             }
         }
     }
